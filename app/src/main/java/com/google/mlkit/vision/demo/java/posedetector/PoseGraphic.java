@@ -94,18 +94,6 @@ public class PoseGraphic extends Graphic {
       }
     }
 
-//    PoseLandmark nose = pose.getPoseLandmark(PoseLandmark.NOSE);
-//    PoseLandmark lefyEyeInner = pose.getPoseLandmark(PoseLandmark.LEFT_EYE_INNER);
-//    PoseLandmark lefyEye = pose.getPoseLandmark(PoseLandmark.LEFT_EYE);
-//    PoseLandmark leftEyeOuter = pose.getPoseLandmark(PoseLandmark.LEFT_EYE_OUTER);
-//    PoseLandmark rightEyeInner = pose.getPoseLandmark(PoseLandmark.RIGHT_EYE_INNER);
-//    PoseLandmark rightEye = pose.getPoseLandmark(PoseLandmark.RIGHT_EYE);
-//    PoseLandmark rightEyeOuter = pose.getPoseLandmark(PoseLandmark.RIGHT_EYE_OUTER);
-//    PoseLandmark leftEar = pose.getPoseLandmark(PoseLandmark.LEFT_EAR);
-//    PoseLandmark rightEar = pose.getPoseLandmark(PoseLandmark.RIGHT_EAR);
-//    PoseLandmark leftMouth = pose.getPoseLandmark(PoseLandmark.LEFT_MOUTH);
-//    PoseLandmark rightMouth = pose.getPoseLandmark(PoseLandmark.RIGHT_MOUTH);
-
     PoseLandmark leftShoulder = pose.getPoseLandmark(PoseLandmark.LEFT_SHOULDER);
     PoseLandmark rightShoulder = pose.getPoseLandmark(PoseLandmark.RIGHT_SHOULDER);
     PoseLandmark leftElbow = pose.getPoseLandmark(PoseLandmark.LEFT_ELBOW);
@@ -130,19 +118,6 @@ public class PoseGraphic extends Graphic {
     PoseLandmark leftFootIndex = pose.getPoseLandmark(PoseLandmark.LEFT_FOOT_INDEX);
     PoseLandmark rightFootIndex = pose.getPoseLandmark(PoseLandmark.RIGHT_FOOT_INDEX);
 
-    // Face
-//    drawLine(canvas, nose, lefyEyeInner, whitePaint);
-//    drawLine(canvas, lefyEyeInner, lefyEye, whitePaint);
-//    drawLine(canvas, lefyEye, leftEyeOuter, whitePaint);
-//    drawLine(canvas, leftEyeOuter, leftEar, whitePaint);
-//    drawLine(canvas, nose, rightEyeInner, whitePaint);
-//    drawLine(canvas, rightEyeInner, rightEye, whitePaint);
-//    drawLine(canvas, rightEye, rightEyeOuter, whitePaint);
-//    drawLine(canvas, rightEyeOuter, rightEar, whitePaint);
-//    drawLine(canvas, leftMouth, rightMouth, whitePaint);
-//
-//    drawLine(canvas, leftShoulder, rightShoulder, whitePaint);
-//    drawLine(canvas, leftHip, rightHip, whitePaint);
 
     // Left body
     drawLine(canvas, leftShoulder, leftElbow, leftPaint);
@@ -170,16 +145,20 @@ public class PoseGraphic extends Graphic {
     drawLine(canvas, rightAnkle, rightHeel, rightPaint);
     drawLine(canvas, rightHeel, rightFootIndex, rightPaint);
 
-//    // Draw inFrameLikelihood for all points
-//    if (showInFrameLikelihood) {
-//      for (PoseLandmark landmark : landmarks) {
-//        canvas.drawText(
-//            String.format(Locale.US, "%.2f", landmark.getInFrameLikelihood()),
-//            translateX(landmark.getPosition().x),
-//            translateY(landmark.getPosition().y),
-//            whitePaint);
-//      }
-//    }
+    drawLine(canvas, leftShoulder, rightShoulder, whitePaint);
+
+    // Draw inFrameLikelihood for all points
+    if (showInFrameLikelihood) {
+      for (PoseLandmark landmark : landmarks) {
+        if (landmark.getLandmarkType() > 10) {
+          canvas.drawText(
+                  String.format(Locale.US, "%.2f", landmark.getInFrameLikelihood()),
+                  translateX(landmark.getPosition().x),
+                  translateY(landmark.getPosition().y),
+                  whitePaint);
+        }
+      }
+    }
   }
 
   void drawPoint(Canvas canvas, PoseLandmark landmark, Paint paint) {

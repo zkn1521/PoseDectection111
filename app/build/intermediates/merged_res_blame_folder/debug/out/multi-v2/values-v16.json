@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\study\\Requirements\\project\\vision-quickstart\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "E:\\PoseDectection111\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\张铠南\\.gradle\\caches\\transforms-3\\4ac214dc6efa6c45e54d410ee39814cc\\transformed\\core-1.6.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\16789\\.gradle\\caches\\transforms-3\\4ac214dc6efa6c45e54d410ee39814cc\\transformed\\core-1.6.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\张铠南\\.gradle\\caches\\transforms-3\\4f1c560e82125ca5c25836762262f807\\transformed\\appcompat-1.2.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\16789\\.gradle\\caches\\transforms-3\\4f1c560e82125ca5c25836762262f807\\transformed\\appcompat-1.2.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
